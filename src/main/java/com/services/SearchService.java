@@ -10,6 +10,7 @@ import org.bson.Document;
 
 import java.util.Iterator;
 
+
 import static com.mongodb.client.model.Filters.eq;
 
 public class SearchService {
@@ -23,7 +24,7 @@ public class SearchService {
         BasicDBObject basicDBObject = new BasicDBObject();
         basicDBObject.put("description",  java.util.regex.Pattern.compile(name));
         FindIterable<Document> iterDoc = collection.find(basicDBObject);
-
+//
         String jsonStr = mongoDBConnection.mongoDBDocumentsToJSON(iterDoc);
         return jsonStr;
     }
